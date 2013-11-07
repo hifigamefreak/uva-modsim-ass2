@@ -4,10 +4,10 @@ MAKE	:= make
 GCC 	:= gcc
 CFLAGS	:= -pedantic -Wall -Werror -std=c99
 LFLAGS 	:= -lm 
-TAR		:= tar -zcvf
-RM		:= rm -rf
-CD		:= cd
-MV		:= mv
+TAR	:= tar -zcvf
+RM	:= rm -rf
+CD	:= cd
+MV	:= mv
 
 all:
 	$(MAKE) a1

@@ -19,7 +19,7 @@ void newtonraphson(double guess, double (*fun)(double), int n_steps) {
     * Maximum number of steps reached and no solution found, so stop.
     */
    if(n_steps > MAX_STEPS) {
-      printf("No solution found. Maximum amount of steps (%d) exceeded.\n\n", MAX_STEPS);
+      printf("\n\nNo solution found. Maximum amount of steps (%d) exceeded.\n\n", MAX_STEPS);
       return;
    }
 
