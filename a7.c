@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#define __STDC_FORMAT_MACROS
+#include <inttypes.h>
 
 uint64_t* fib(int n) {
     uint64_t* sequence;
@@ -42,12 +44,12 @@ uint64_t* fibgen(int n, int g) {
 int main(void) {
     uint64_t* seq = fib(69);
     for(int i = 0; i <=69; i++ ) {
-        printf("%llu\n", seq[i]);
+        printf("%" PRIu64 "\n", seq[i]);
     }
     
     uint64_t* seq2 = fibgen(69, 4);
     for(int i = 0; i <= 69; i++ ) {
-        printf("%llu\n", seq2[i]);
+        printf("%" PRIu64 "\n", seq2[i]);
     }
 }
 
