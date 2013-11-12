@@ -1,31 +1,33 @@
-/* Practicum Modelleren Simuleren 
- * Jan Laan (5756529) & Joost Hekman (5887232)
- *
- * Assignment 2, part 3:
- * Find the square root of 2 using the bisection method, the Newton-Raphson
- * method and the Regula-Falsi method.
- */
 #include <stdio.h>
-#include <math.h>
-#include "bisection.h"
 #include "newtonraphson.h"
-#include "falseposition.h"
 
-/*
- * Function that approaches the exact value of the square root of 2 in 
- * x = 0.
- */
-double power(double x) {
-   return x * x - 2;
+double f1(double x) {
+   return x * x - x + 2;
 }
 
-int main(void) {
-   printf("Trying to find the square root of 2:\n\n");
-   bisect(0, 0, 2, &power);
-   newtonraphson(4.5, &power, 0);
-   falseposition(0, 2, &power);
+double f2(double x) {
+   return x * x * x - 3 * x - 2;
+}
+
+double f3(double x) {
+   return (x * x + 1) * (x - 4);
+}
+
+double f4(double x) {
+   return x * x - x + 2;
+
+}
+int main (void) {
+   printf("\nFinding zero for x^2 -1:");
+   newtonraphson(4, &f1, 0);   
+
+   printf("\nFinding zero for x^3 - 3x - 2:");
+   newtonraphson(4, &f2, 0);
+
+   printf("\nFinding zero for (x^2 + 1) (x - 4):");
+   newtonraphson(2, &f3, 0);
+
+   printf("\n\nFinding zero for x^2 - x + 2:");
+   newtonraphson(0.5, &f4, 0);
    return 1;
-
 }
-
-
