@@ -1,33 +1,32 @@
+/* Practicum Modelleren Simuleren 
+ * Joost Hekman (5887232)
+ *
+ * Assignment 2, part 3:
+ * Numerical integration of two given functions.
+ */
+
 #include <stdio.h>
 #include "newtonraphson.h"
 
+/* Function 1 */
 double f1(double x) {
-   return x * x - x + 2;
-}
-
-double f2(double x) {
    return x * x * x - 3 * x - 2;
 }
 
-double f3(double x) {
-   return (x * x + 1) * (x - 4);
-}
-
-double f4(double x) {
+/* Function 2 */
+double f2(double x) {
    return x * x - x + 2;
 
 }
-int main (void) {
-   printf("\nFinding zero for x^2 -1:");
-   newtonraphson(4, &f1, 0);   
 
+/* Main function */
+int main(int argc, char* argv[]) {
+   /* Calculate the zero using Newton-Raphson of function 1 */
    printf("\nFinding zero for x^3 - 3x - 2:");
-   newtonraphson(4, &f2, 0);
+   newtonraphson(4, &f1, 0);
 
-   printf("\nFinding zero for (x^2 + 1) (x - 4):");
-   newtonraphson(2, &f3, 0);
-
+   /* Now do the same for function 2 */
    printf("\n\nFinding zero for x^2 - x + 2:");
-   newtonraphson(0.5, &f4, 0);
+   newtonraphson(0.5, &f2, 0);
    return 1;
 }

@@ -2,7 +2,7 @@
  * Jan Laan (5756529) & Joost Hekman (5887232)
  *
  * Assignment 2, part 1:
- * Numerical differentiation
+ * Numerical differentiation using both Right-hand as central differentiation
  */
 #include <stdlib.h>
 #include <stdio.h>
@@ -11,7 +11,7 @@
 
 #define PI 3.14159265358979323846264338327
 
-
+/* Main function */
 int main(int argc, char* argv[]) {
    double dx = 0.0;
    int i, j = 0;
